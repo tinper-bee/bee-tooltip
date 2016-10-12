@@ -15,14 +15,43 @@ $ npm install
 $ npm run dev
 ```
 
-## Usage
+## 使用
 
-```js
-
+### 使用单独的tooltip包
+#### 组件引入
+先进行下载tooltip包
 ```
+npm install --save bee-tooltip
+```
+组件调用
+```js
+import { Tooltip } from 'bee-tooltip';
+React.render(<div>
+    <div>
+        <Tooltip placement="top" className="in">show tooltip</Tooltip>
+    </div>
+</div>, document.getElementById('target'));
+```
+#### 样式引入
+- 可以使用link引入dist目录下tooltip.css
+```
+<link rel="stylesheet" href="./node_modules/build/bee-tooltip.css">
+```
+- 可以在js中import样式
+```js
+import "./node_modules/src/tooltip.scss"
+//或是
+import "./node_modules/build/bee-tooltip.css"
+```
+
+### 使用tinper-bee组件库
+(tinper-bee组件库使用方法)[]
+
 
 
 
 ## API
 |参数|说明|类型|默认值|
 |---|----|---|------|
+|palcement|显示位置(`top` `left` `right` `bottom`)|string|top|
+|className|增加额外的class(in,'')|string|''默认隐藏
