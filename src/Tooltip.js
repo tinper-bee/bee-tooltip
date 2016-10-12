@@ -25,7 +25,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-	placement: "left",
+	placement: "top",
 	colors: 'primary',
 	className: '',
 	childrend: 'tooltip'
