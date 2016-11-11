@@ -1,70 +1,104 @@
-import React, { Component,PropTypes } from 'react';
-import ReactDOM from 'react-dom';
-import classnames from 'classnames';
+import classNames from 'classnames';
+import React from 'react';
+
 
 const propTypes = {
-	/**
-	 * @title 方位
-	 */
-	placement: PropTypes.oneOf(['top','left','bottom','right']),
-	/**
-	 * @title 颜色
-	 */
-	colors: PropTypes.oneOf(['primary', 'success', 'info', 'warning', 'danger', 'dark','']),
-	/**
-	 * @title 类名
-	 */
-	className: PropTypes.string,
-	/**
-	 * @title 内容
-	 */
-	childrend: PropTypes.oneOfType([
-		PropTypes.element,
-		PropTypes.string
-	])
+  /**
+   * An html id attribute, necessary for accessibility
+   * @type {string|number}
+   * @required
+   */
+  id: React.PropTypes.oneOfType([
+    React.PropTypes.string, React.PropTypes.number,
+  ]),
+
+  /**
+   * Sets the direction the Tooltip is positioned towards.
+   */
+  placement: React.PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+
+  /**
+   * The "top" position value for the Tooltip.
+   */
+  positionTop: React.PropTypes.oneOfType([
+    React.PropTypes.number, React.PropTypes.string,
+  ]),
+  /**
+   * The "left" position value for the Tooltip.
+   */
+  positionLeft: React.PropTypes.oneOfType([
+    React.PropTypes.number, React.PropTypes.string,
+  ]),
+
+  /**
+   * The "top" position value for the Tooltip arrow.
+   */
+  arrowOffsetTop: React.PropTypes.oneOfType([
+    React.PropTypes.number, React.PropTypes.string,
+  ]),
+  /**
+   * The "left" position value for the Tooltip arrow.
+   */
+  arrowOffsetLeft: React.PropTypes.oneOfType([
+    React.PropTypes.number, React.PropTypes.string,
+  ]),
 };
 
 const defaultProps = {
-	placement: "top",
-	colors: '',
-	className: '',
-	childrend: 'tooltip'
+  placement: 'right',
 };
 
 const clsPrefix = 'u-tooltip';
 
-class Tooltip extends Component {
-	constructor(props) {
-		super(props);
-	}
+class Tooltip extends React.Component {
+  render() {
+    const {
+      placement,
+      positionTop,
+      positionLeft,
+      arrowOffsetTop,
+      arrowOffsetLeft,
+      className,
+      style,
+      children,
+      ...others
+    } = this.props;
 
-	render() {
-		let {placement,colors,className,children, ...others} = this.props;
-		let clsObj = {};
-		if(className) {
-			clsObj[className] = true;
-		}
-		if(placement){
-			clsObj[placement] = true;
-		}
-		if(colors) {
-			clsObj[colors] = true;
-		}
-		let classNames = classnames(clsPrefix,clsObj);
-		return(
-			<div 
-				role="tooltip"
-				className = {classNames}
-				{...others}>
-				<div className="tooltip-arrow"></div>
-				<div className="tooltip-inner">{this.props.children}</div>
-			</div>
-		)
-			
-		
-	}
+
+    const classes = {
+    	'u-tooltip':true,
+      [placement]: true
+    };
+
+    const outerStyle = {
+      top: positionTop,
+      left: positionLeft,
+      ...style,
+    };
+
+    const arrowStyle = {
+      top: arrowOffsetTop,
+      left: arrowOffsetLeft,
+    };
+
+    return (
+      <div
+        {...others}
+        role="tooltip"
+        className={classNames(className, classes)}
+        style={outerStyle}
+      >
+        <div className='tooltip-arrow' style={arrowStyle} />
+
+        <div className='tooltip-inner'>
+          {children}
+        </div>
+      </div>
+    );
+  }
 }
 
 Tooltip.propTypes = propTypes;
 Tooltip.defaultProps = defaultProps;
+
 export default Tooltip;
