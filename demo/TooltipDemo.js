@@ -1,6 +1,8 @@
 import Tooltip from '../src';
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
+import OverlayTrigger from '../src/OverlayTrigger';
+
 
 class Demo extends Component {
 	constructor(props) {
@@ -8,26 +10,17 @@ class Demo extends Component {
 	}
 
 	render(){
+		const tooltip = (
+		  <Tooltip id="tooltip"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
+		);
 		return( 
 			<div>
-				<h3>bottom</h3>
-				<Tooltip placement="right" className="in" id="tooltip-right">
-			      Tooltip right
-			    </Tooltip>
-
-			    <Tooltip placement="top" className="in" id="tooltip-top">
-			      Tooltip top
-			    </Tooltip>
-
-			    <Tooltip placement="left" className="in" id="tooltip-left">
-			      Tooltip left
-			    </Tooltip>
-
-			    <Tooltip placement="bottom" className="in" id="tooltip-bottom">
-			      Tooltip bottom
-			    </Tooltip>
+			    <OverlayTrigger overlay = {tooltip}  placement="bottom">
+			    	<span>tooltip</span>
+			    </OverlayTrigger>
 			</div>
 		)
 	}
 }
+
 export default Demo;
