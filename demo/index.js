@@ -1,2 +1,2 @@
 import Demo from './TooltipDemo';
-ReactDOM.render(<Demo/>, document.getElementById('tinperBeeDemo'));
+ReactDOM.render(Demo(), document.getElementById('tinperBeeDemo'));
