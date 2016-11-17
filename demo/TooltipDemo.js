@@ -1,7 +1,7 @@
 import Tooltip from '../src';
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
-import { OverlayTrigger } from 'bee-overlay';
+import  { OverlayTrigger }  from 'bee-overlay';
 
 
 

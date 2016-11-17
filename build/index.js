@@ -1,12 +1,14 @@
 'use strict';
 
-exports.__esModule = true;
-exports.Tooltip = undefined;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var _Tooltip2 = require('./Tooltip');
+var _Tooltip = require('./Tooltip');
 
-var _Tooltip3 = _interopRequireDefault(_Tooltip2);
+var _Tooltip2 = _interopRequireDefault(_Tooltip);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-exports.Tooltip = _Tooltip3["default"];
+exports["default"] = _Tooltip2["default"];
+module.exports = exports['default'];

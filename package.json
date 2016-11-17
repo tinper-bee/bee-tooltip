@@ -33,10 +33,10 @@
     "coveralls": "bee-tools run coverage"
   },
   "dependencies": {
-    "bee-overlay": "0.0.8",
+    "bee-overlay": "0.0.12",
     "classnames": "^2.2.5",
     "dom-helpers": "^3.0.0",
-    "tinper-bee-core": "0.0.6"
+    "tinper-bee-core": "latest"
   },
   "devDependencies": {
     "chai": "^3.5.0",
