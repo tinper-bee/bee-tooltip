@@ -31,13 +31,13 @@ const propTypes = {
   ]),
 
   /**
-   * The "top" position value for the Tooltip arrow.
+   * 与目标Top的距离
    */
   arrowOffsetTop: React.PropTypes.oneOfType([
     React.PropTypes.number, React.PropTypes.string,
   ]),
   /**
-   * The "left" position value for the Tooltip arrow.
+   * 与目标Left的距离
    */
   arrowOffsetLeft: React.PropTypes.oneOfType([
     React.PropTypes.number, React.PropTypes.string,

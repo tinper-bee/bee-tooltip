@@ -51,11 +51,11 @@ var propTypes = {
   positionLeft: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.string]),
 
   /**
-   * The "top" position value for the Tooltip arrow.
+   * 与目标Top的距离
    */
   arrowOffsetTop: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.string]),
   /**
-   * The "left" position value for the Tooltip arrow.
+   * 与目标Left的距离
    */
   arrowOffsetLeft: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.string])
 };

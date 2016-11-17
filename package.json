@@ -33,6 +33,7 @@
     "coveralls": "bee-tools run coverage"
   },
   "dependencies": {
+    "bee-button": "0.0.6",
     "bee-overlay": "0.0.12",
     "classnames": "^2.2.5",
     "dom-helpers": "^3.0.0",
