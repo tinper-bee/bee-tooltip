@@ -13,6 +13,16 @@ function demo1 () {
 		</div>
 	)
 }
+function demo2 () {
+	return (
+		<div className="demo-tooltip">
+			<Tooltip id="tooltip1" positionTop="20px"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
+			<Tooltip id="tooltip2" placement="top" positionLeft="20px"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
+			<Tooltip id="tooltip3" placement="right" arrowOffsetLeft="1px"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
+			<Tooltip id="tooltip4" placement="bottom" arrowOffsetTop="1px"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
+		</div>
+	)
+}
 
 const tooltip1 = function () {
 	return (
@@ -35,7 +45,7 @@ const tooltip4 = function () {
 	);
 }
 
-function demo2 () {
+function demo3 () {
 
 	return (
 		<div className="demo-overlay-trigger">
@@ -56,3 +66,4 @@ function demo2 () {
 }
 ReactDOM.render(demo1(), document.getElementById('ReactTooltipDemo1'));
 ReactDOM.render(demo2(), document.getElementById('ReactTooltipDemo2'));
+ReactDOM.render(demo3(), document.getElementById('ReactTooltipDemo3'));
