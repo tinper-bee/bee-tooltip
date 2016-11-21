@@ -1,12 +1,13 @@
 import React from 'react';
 import {shallow, mount, render} from 'enzyme';
 import {expect} from 'chai';
-import { Tooltip } from '../src/index';
+import Tooltip  from '../src/index';
+import  { OverlayTrigger }  from 'bee-overlay';
 
 describe('Enzyme Shallow', function () {
   it('Tooltip should be exist', function () {
     let tooltip = shallow(<Tooltip/>);
-    expect(Tooltip.length).to.equal(1);
+    expect(tooltip.length).to.equal(1);
   });
 
 });
