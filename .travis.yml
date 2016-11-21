@@ -3,8 +3,10 @@ sudo: false
 language: node_js
 
 node_js:
-  - "4"
   - "6"
+  
+service_name: travis-pro
+repo_token: fQG7KuXuOZlS1ZND0BSaHyZN1OW2WVUFF
 
 env:
   global:
@@ -12,6 +14,9 @@ env:
     - NPM_CONFIG_PROGRESS="false"
 
 before_install:
-  - npm install
+  - npm install -g bee-tools
 
-script: npm run lint && npm test
+script: npm test
+
+after_script:
+    - npm run coveralls

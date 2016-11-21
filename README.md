@@ -1,8 +1,7 @@
 # bee-tooltip
 [![npm version](https://img.shields.io/npm/v/bee-tooltip.svg)](https://www.npmjs.com/package/bee-tooltip)
 [![Build Status](https://img.shields.io/travis/tinper-bee/generator-tinper-bee/master.svg)](https://travis-ci.org/tinper-bee/bee-tooltip)
-[![devDependency Status](https://img.shields.io/david/dev/tinper-bee/bee-tooltip.svg)](https://david-dm.org/tinper-bee/bee-tooltip#info=devDependencies)
-
+[![Coverage Status](https://coveralls.io/repos/github/tinper-bee/bee-tooltip/badge.svg?branch=master)](https://coveralls.io/github/tinper-bee/bee-tooltip?branch=master)
 
 react bee-tooltip component for tinper-bee
 
