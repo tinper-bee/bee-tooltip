@@ -1,51 +1,51 @@
 {
-  "name": "bee-tooltip",
-  "version": "0.0.2",
-  "description": "bee-tooltip ui component for react",
-  "keywords": [
-    "react",
-    "react-component",
-    "react-tooltip",
-    "iuap-design",
-    "neoui-react",
-    "bee-tooltip"
-  ],
-  "engines": {
-    "node": ">=4.0.0"
-  },
-  "homepage": "https://github.com/tinper-bee/bee-tooltip",
-  "author": "yonyou",
-  "repository": "http://github.com/tinper-bee/bee-tooltip",
-  "bugs": "https://github.com/tinper-bee/tooltip/issues",
-  "license": "MIT",
-  "main": "./build/index",
-  "config": {
-    "port": 8000
-  },
-  "scripts": {
-    "dev": "bee-tools run start",
-    "build": "bee-tools run build",
-    "lint": "bee-tools run lint",
-    "test": "bee-tools run test",
-    "chrome": "bee-tools run chrome",
-    "browsers": "bee-tools run browsers",
-    "pub": "bee-tools run pub",
-    "coveralls": "bee-tools run coverage"
-  },
-  "dependencies": {
-    "bee-button": "latest",
-    "bee-overlay": "latest",
-    "classnames": "^2.2.5",
-    "dom-helpers": "latest",
-    "tinper-bee-core": "latest"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "console-polyfill": "~0.2.1",
-    "enzyme": "^2.4.1",
-    "es5-shim": "~4.1.10",
-    "react": "~0.14.0",
-    "react-addons-test-utils": "15.3.2",
-    "react-dom": "~0.14.0"
-  }
+ "name": "bee-tooltip",
+ "version": "0.1.0",
+ "description": "bee-tooltip ui component for react",
+ "keywords": [
+  "react",
+  "react-component",
+  "react-tooltip",
+  "iuap-design",
+  "neoui-react",
+  "bee-tooltip"
+ ],
+ "engines": {
+  "node": ">=4.0.0"
+ },
+ "homepage": "https://github.com/tinper-bee/bee-tooltip",
+ "author": "yonyou",
+ "repository": "http://github.com/tinper-bee/bee-tooltip",
+ "bugs": "https://github.com/tinper-bee/tooltip/issues",
+ "license": "MIT",
+ "main": "./build/index",
+ "config": {
+  "port": 8000
+ },
+ "scripts": {
+  "dev": "bee-tools run start",
+  "build": "bee-tools run build",
+  "lint": "bee-tools run lint",
+  "test": "bee-tools run test",
+  "chrome": "bee-tools run chrome",
+  "browsers": "bee-tools run browsers",
+  "pub": "bee-tools run pub",
+  "coveralls": "bee-tools run coverage"
+ },
+ "dependencies": {
+  "bee-button": "latest",
+  "bee-overlay": "latest",
+  "classnames": "^2.2.5",
+  "dom-helpers": "latest",
+  "tinper-bee-core": "latest"
+ },
+ "devDependencies": {
+  "chai": "^3.5.0",
+  "console-polyfill": "~0.2.1",
+  "enzyme": "^2.4.1",
+  "es5-shim": "~4.1.10",
+  "react": "~0.14.0",
+  "react-addons-test-utils": "15.3.2",
+  "react-dom": "~0.14.0"
+ }
 }
