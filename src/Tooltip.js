@@ -76,8 +76,7 @@ class Tooltip extends React.Component {
 
     const arrowStyle = {
       top: arrowOffsetTop,
-      left: arrowOffsetLeft,
-      ...style,
+      left: arrowOffsetLeft
     };
 
     let classNames = classnames(clsPrefix,classes);

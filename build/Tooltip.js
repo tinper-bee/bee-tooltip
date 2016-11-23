@@ -93,10 +93,10 @@ var Tooltip = function (_React$Component) {
       left: positionLeft
     }, style);
 
-    var arrowStyle = _extends({
+    var arrowStyle = {
       top: arrowOffsetTop,
       left: arrowOffsetLeft
-    }, style);
+    };
 
     var classNames = (0, _classnames2["default"])(clsPrefix, classes);
     return _react2["default"].createElement(
