@@ -1,11 +1,9 @@
-import classNames from 'classnames';
+import classnames from 'classnames';
 import React from 'react';
 
 
 const propTypes = {
   /**
-   * An html id attribute, necessary for accessibility
-   * @type {string|number}
    * @required
    */
   id: React.PropTypes.oneOfType([
@@ -13,18 +11,18 @@ const propTypes = {
   ]),
 
   /**
-   * Sets the direction the Tooltip is positioned towards.
+   * 相对目标元素显示上下左右的位置
    */
   placement: React.PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
 
   /**
-   * The "top" position value for the Tooltip.
+   * 绝对定位上边距.
    */
   positionTop: React.PropTypes.oneOfType([
     React.PropTypes.number, React.PropTypes.string,
   ]),
   /**
-   * The "left" position value for the Tooltip.
+   * 绝对定位左边距
    */
   positionLeft: React.PropTypes.oneOfType([
     React.PropTypes.number, React.PropTypes.string,
@@ -46,9 +44,9 @@ const propTypes = {
 
 const defaultProps = {
   placement: 'right',
+  clsPrefix: 'u-tooltip'
 };
 
-const clsPrefix = 'u-tooltip';
 
 class Tooltip extends React.Component {
   render() {
@@ -61,12 +59,12 @@ class Tooltip extends React.Component {
       className,
       style,
       children,
+      clsPrefix,
       ...others
     } = this.props;
 
 
     const classes = {
-    	'u-tooltip':true,
       [placement]: true
     };
 
@@ -82,11 +80,11 @@ class Tooltip extends React.Component {
       ...style,
     };
 
+    let classNames = classnames(clsPrefix,classes);
     return (
       <div
         {...others}
-        role="tooltip"
-        className={classNames(className, classes)}
+        className={classnames(className, classNames)}
         style={outerStyle}
       >
         <div className='tooltip-arrow' style={arrowStyle} />

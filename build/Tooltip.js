@@ -30,23 +30,21 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var propTypes = {
   /**
-   * An html id attribute, necessary for accessibility
-   * @type {string|number}
    * @required
    */
   id: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.string, _react2["default"].PropTypes.number]),
 
   /**
-   * Sets the direction the Tooltip is positioned towards.
+   * 相对目标元素显示上下左右的位置
    */
   placement: _react2["default"].PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
 
   /**
-   * The "top" position value for the Tooltip.
+   * 绝对定位上边距.
    */
   positionTop: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.string]),
   /**
-   * The "left" position value for the Tooltip.
+   * 绝对定位左边距
    */
   positionLeft: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.string]),
 
@@ -61,10 +59,9 @@ var propTypes = {
 };
 
 var defaultProps = {
-  placement: 'right'
+  placement: 'right',
+  clsPrefix: 'u-tooltip'
 };
-
-var clsPrefix = 'u-tooltip';
 
 var Tooltip = function (_React$Component) {
   _inherits(Tooltip, _React$Component);
@@ -85,28 +82,27 @@ var Tooltip = function (_React$Component) {
     var className = _props.className;
     var style = _props.style;
     var children = _props.children;
+    var clsPrefix = _props.clsPrefix;
 
-    var others = _objectWithoutProperties(_props, ['placement', 'positionTop', 'positionLeft', 'arrowOffsetTop', 'arrowOffsetLeft', 'className', 'style', 'children']);
+    var others = _objectWithoutProperties(_props, ['placement', 'positionTop', 'positionLeft', 'arrowOffsetTop', 'arrowOffsetLeft', 'className', 'style', 'children', 'clsPrefix']);
 
-    var classes = _defineProperty({
-      'u-tooltip': true
-    }, placement, true);
+    var classes = _defineProperty({}, placement, true);
 
     var outerStyle = _extends({
       top: positionTop,
       left: positionLeft
     }, style);
 
-    var arrowStyle = {
+    var arrowStyle = _extends({
       top: arrowOffsetTop,
       left: arrowOffsetLeft
-    };
+    }, style);
 
+    var classNames = (0, _classnames2["default"])(clsPrefix, classes);
     return _react2["default"].createElement(
       'div',
       _extends({}, others, {
-        role: 'tooltip',
-        className: (0, _classnames2["default"])(className, classes),
+        className: (0, _classnames2["default"])(className, classNames),
         style: outerStyle
       }),
       _react2["default"].createElement('div', { className: 'tooltip-arrow', style: arrowStyle }),
