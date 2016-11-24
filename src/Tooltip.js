@@ -64,17 +64,17 @@ class Tooltip extends React.Component {
     } = this.props;
 
 
-    const classes = {
+    let classes = {
       [placement]: true
     };
 
-    const outerStyle = {
+    let outerStyle = {
       top: positionTop,
       left: positionLeft,
       ...style,
     };
 
-    const arrowStyle = {
+    let arrowStyle = {
       top: arrowOffsetTop,
       left: arrowOffsetLeft
     };
