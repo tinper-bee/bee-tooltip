@@ -32,30 +32,30 @@ var propTypes = {
   /**
    * @required
    */
-  id: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.string, _react2["default"].PropTypes.number]),
-
+  id: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]),
+  inverse: _react2["default"].PropTypes.bool,
   /**
    * 相对目标元素显示上下左右的位置
    */
-  placement: _react2["default"].PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  placement: _react.PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
 
   /**
    * 绝对定位上边距.
    */
-  positionTop: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.string]),
+  positionTop: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
   /**
    * 绝对定位左边距
    */
-  positionLeft: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.string]),
+  positionLeft: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
 
   /**
    * 与目标Top的距离
    */
-  arrowOffsetTop: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.string]),
+  arrowOffsetTop: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
   /**
    * 与目标Left的距离
    */
-  arrowOffsetLeft: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.string])
+  arrowOffsetLeft: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string])
 };
 
 var defaultProps = {
@@ -73,6 +73,8 @@ var Tooltip = function (_React$Component) {
   }
 
   Tooltip.prototype.render = function render() {
+    var _classes;
+
     var _props = this.props,
         placement = _props.placement,
         positionTop = _props.positionTop,
@@ -83,9 +85,10 @@ var Tooltip = function (_React$Component) {
         style = _props.style,
         children = _props.children,
         clsPrefix = _props.clsPrefix,
-        others = _objectWithoutProperties(_props, ['placement', 'positionTop', 'positionLeft', 'arrowOffsetTop', 'arrowOffsetLeft', 'className', 'style', 'children', 'clsPrefix']);
+        inverse = _props.inverse,
+        others = _objectWithoutProperties(_props, ['placement', 'positionTop', 'positionLeft', 'arrowOffsetTop', 'arrowOffsetLeft', 'className', 'style', 'children', 'clsPrefix', 'inverse']);
 
-    var classes = _defineProperty({}, placement, true);
+    var classes = (_classes = {}, _defineProperty(_classes, placement, true), _defineProperty(_classes, 'inverse', inverse), _classes);
 
     var outerStyle = _extends({
       top: positionTop,
