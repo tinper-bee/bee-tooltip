@@ -53,4 +53,5 @@ import "./node_modules/build/bee-tooltip.css"
 |参数|说明|类型|默认值|
 |---|----|---|------|
 |palcement|显示位置(`top` `left` `right` `bottom`)|string|top|
+|inverse|反白显示|bool|false|
 |className|增加额外的class(in,'')|string|''默认隐藏

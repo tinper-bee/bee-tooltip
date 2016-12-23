@@ -28,12 +28,19 @@
     	opacity: .9;
     }
     .tooltip-arrow{
-    	position: absolute;
+    	/*position: absolute;
 	    width: 0;
 	    height: 0;
 	    border-color: transparent;
-	    border-style: solid;
+	    border-style: solid;*/
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
     }
+    
     .tooltip-inner{
     	max-width: 200px;
 	    padding: 3px 8px;
@@ -41,7 +48,9 @@
 	    text-align: center;
 	    background-color: #000;
 	    border-radius: 4px;
+        word-wrap:break-word;
     }
+    
     &.right{
     	padding: 0 5px;
     	.tooltip-arrow{
@@ -81,5 +90,71 @@
 		    border-width: 0 5px 5px;
 		    border-bottom-color: #000;
     	}
+        
+    }
+    &.inverse.bottom {
+        .tooltip-arrow::after{
+            top:1px;
+            margin-left: -5px;
+            border-top-width:0;
+            border-bottom-color:#fff;
+        }
+        .tooltip-arrow {
+            border-bottom-color:#d9d9d9;
+        }
+    }
+    &.inverse.left {
+        .tooltip-arrow::after{
+            border-right-width: 0;
+            top: -5px;
+            margin-left: -6px;
+            border-left-color: #fff;
+        }
+        .tooltip-arrow {
+            border-left-color:#d9d9d9;
+        }
+    }
+    &.inverse.right {
+        .tooltip-arrow::after{
+            border-left-width: 0;
+            top: -5px;
+            margin-left: 1px;
+            border-right-color: #fff;
+        }
+        .tooltip-arrow {
+            border-right-color:#d9d9d9;
+        }
+    }
+    &.inverse.top {
+        .tooltip-arrow::after{
+            top: -6px;
+            margin-left: -5px;
+            border-bottom-width: 0;
+            border-bottom-color: #d9d9d9;
+            border-top-color: #fff;
+        }
+        .tooltip-arrow {
+            border-top-color:#d9d9d9;
+        }
+    }
+    &.inverse {
+        .tooltip-inner{
+            background-color: #fff;
+            color: rgb(51,51,51);
+            border: 1px solid #d9d9d9;
+        }
+
+        .tooltip-arrow::after{
+            content:"dd";
+            position:absolute;
+            display:block;
+            width:0;
+            height:0;
+            border-color:transparent;
+            border-style:solid;
+            content:" ";
+            border-width:5px;
+        }
+
     }
 }

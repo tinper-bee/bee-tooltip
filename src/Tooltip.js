@@ -1,44 +1,44 @@
 import classnames from 'classnames';
-import React from 'react';
+import React,{PropTypes} from 'react';
 
 
 const propTypes = {
   /**
    * @required
    */
-  id: React.PropTypes.oneOfType([
-    React.PropTypes.string, React.PropTypes.number,
+  id: PropTypes.oneOfType([
+    PropTypes.string, PropTypes.number,
   ]),
-
+  inverse: React.PropTypes.bool,
   /**
    * 相对目标元素显示上下左右的位置
    */
-  placement: React.PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
 
   /**
    * 绝对定位上边距.
    */
-  positionTop: React.PropTypes.oneOfType([
-    React.PropTypes.number, React.PropTypes.string,
+  positionTop: PropTypes.oneOfType([
+    PropTypes.number, PropTypes.string,
   ]),
   /**
    * 绝对定位左边距
    */
-  positionLeft: React.PropTypes.oneOfType([
-    React.PropTypes.number, React.PropTypes.string,
+  positionLeft: PropTypes.oneOfType([
+    PropTypes.number, PropTypes.string,
   ]),
 
   /**
    * 与目标Top的距离
    */
-  arrowOffsetTop: React.PropTypes.oneOfType([
-    React.PropTypes.number, React.PropTypes.string,
+  arrowOffsetTop: PropTypes.oneOfType([
+    PropTypes.number, PropTypes.string,
   ]),
   /**
    * 与目标Left的距离
    */
-  arrowOffsetLeft: React.PropTypes.oneOfType([
-    React.PropTypes.number, React.PropTypes.string,
+  arrowOffsetLeft: PropTypes.oneOfType([
+    PropTypes.number, PropTypes.string,
   ]),
 };
 
@@ -60,12 +60,14 @@ class Tooltip extends React.Component {
       style,
       children,
       clsPrefix,
+      inverse,
       ...others
     } = this.props;
 
 
     let classes = {
-      [placement]: true
+      [placement]: true,
+      'inverse':inverse
     };
 
     let outerStyle = {
