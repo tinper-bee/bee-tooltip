@@ -8,9 +8,9 @@ import Tooltip from '../src';
 import  { OverlayTrigger }  from 'bee-overlay';
 
 
-const CARET = <i className="uf uf-chevronarrowdown"></i>;
+const CARET = <i className="uf uf-arrow-down"></i>;
 
-const CARETUP = <i className="uf uf-chevronarrowup"></i>;
+const CARETUP = <i className="uf uf-arrow-up"></i>;
 
 
 /**
@@ -21,8 +21,8 @@ class Demo1 extends Component {
 	render () {
 		return (
 			<div className="demo-tooltip">
-				<Tooltip inverse id="tooltip1"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
-				<Tooltip inverse id="tooltip2" placement="top"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
+				<Tooltip inverse id="tooltip1"><strong>Holy !</strong> Check this info.</Tooltip>
+				<Tooltip inverse id="tooltip2" placement="top"><strong> guacamole!</strong> Check this info.</Tooltip>
 				<Tooltip id="tooltip3" placement="left"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
 				<Tooltip id="tooltip4" placement="bottom"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
 			</div>
@@ -45,7 +45,7 @@ class Demo2 extends Component {
 		    </OverlayTrigger>
 		)
 	}
-}var DemoArray = [{"example":<Demo1 />,"title":" 静态Tooltip","code":"/**\n * @title 静态Tooltip\n * @description `placement`参数控制显示位置。\n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-tooltip\">\n\t\t\t\t<Tooltip inverse id=\"tooltip1\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip inverse id=\"tooltip2\" placement=\"top\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip id=\"tooltip3\" placement=\"left\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip id=\"tooltip4\" placement=\"bottom\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t\t\t</div>\n\t\t)\n\t}\n}","desc":" `placement`参数控制显示位置。"},{"example":<Demo2 />,"title":" 动态触发Tooltip","code":"/**\n * @title 动态触发Tooltip\n * @description OverlayTrigger组件详见bee-overlay库\n */\n const tooltip1 = function () {\n\treturn (\n\t  <Tooltip id=\"tooltip5\" positionTop=\"20px\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t);\n}\nclass Demo2 extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<OverlayTrigger overlay = {tooltip1()}  placement=\"top\">\n\t\t    \t<Button colors=\"primary\">tooltip</Button>\n\t\t    </OverlayTrigger>\n\t\t)\n\t}\n}","desc":" OverlayTrigger组件详见bee-overlay库"}]
+}var DemoArray = [{"example":<Demo1 />,"title":" 静态Tooltip","code":"/**\n * @title 静态Tooltip\n * @description `placement`参数控制显示位置。\n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-tooltip\">\n\t\t\t\t<Tooltip inverse id=\"tooltip1\"><strong>Holy !</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip inverse id=\"tooltip2\" placement=\"top\"><strong> guacamole!</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip id=\"tooltip3\" placement=\"left\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip id=\"tooltip4\" placement=\"bottom\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t\t\t</div>\n\t\t)\n\t}\n}","desc":" `placement`参数控制显示位置。"},{"example":<Demo2 />,"title":" 动态触发Tooltip","code":"/**\n * @title 动态触发Tooltip\n * @description OverlayTrigger组件详见bee-overlay库\n */\n const tooltip1 = function () {\n\treturn (\n\t  <Tooltip id=\"tooltip5\" positionTop=\"20px\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t);\n}\nclass Demo2 extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<OverlayTrigger overlay = {tooltip1()}  placement=\"top\">\n\t\t    \t<Button colors=\"primary\">tooltip</Button>\n\t\t    </OverlayTrigger>\n\t\t)\n\t}\n}","desc":" OverlayTrigger组件详见bee-overlay库"}]
 
 
 class Demo extends Component {
