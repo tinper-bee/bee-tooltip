@@ -5,7 +5,7 @@ import Button from 'bee-button';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Tooltip from '../src';
-import  { OverlayTrigger }  from 'bee-overlay';
+import OverlayTrigger from 'bee-overlay/build/OverlayTrigger';
 
 
 const CARET = <i className="uf uf-arrow-down"></i>;

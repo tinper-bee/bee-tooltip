@@ -34,9 +34,10 @@
  },
  "dependencies": {
   "bee-button": "latest",
+  "bee-overlay": "latest",
   "classnames": "^2.2.5",
   "dom-helpers": "latest",
-  "tinper-bee-core": "^0.1.5"
+  "tinper-bee-core": "latest"
  },
  "devDependencies": {
   "chai": "^3.5.0",
