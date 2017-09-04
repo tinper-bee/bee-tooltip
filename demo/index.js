@@ -13,39 +13,7 @@ const CARET = <i className="uf uf-arrow-down"></i>;
 const CARETUP = <i className="uf uf-arrow-up"></i>;
 
 
-/**
- * @title 静态Tooltip
- * @description `placement`参数控制显示位置。
- */
-class Demo1 extends Component {
-	render () {
-		return (
-			<div className="demo-tooltip">
-				<Tooltip inverse id="tooltip1"><strong>Holy !</strong> Check this info.</Tooltip>
-				<Tooltip inverse id="tooltip2" placement="top"><strong> guacamole!</strong> Check this info.</Tooltip>
-				<Tooltip id="tooltip3" placement="left"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
-				<Tooltip id="tooltip4" placement="bottom"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
-			</div>
-		)
-	}
-}/**
- * @title 动态触发Tooltip
- * @description OverlayTrigger组件详见bee-overlay库
- */
- const tooltip1 = function () {
-	return (
-	  <Tooltip id="tooltip5" positionTop="20px"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
-	);
-}
-class Demo2 extends Component {
-	render(){
-		return (
-			<OverlayTrigger overlay = {tooltip1()}  placement="top">
-		    	<Button colors="primary">tooltip</Button>
-		    </OverlayTrigger>
-		)
-	}
-}var DemoArray = [{"example":<Demo1 />,"title":" 静态Tooltip","code":"/**\n * @title 静态Tooltip\n * @description `placement`参数控制显示位置。\n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-tooltip\">\n\t\t\t\t<Tooltip inverse id=\"tooltip1\"><strong>Holy !</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip inverse id=\"tooltip2\" placement=\"top\"><strong> guacamole!</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip id=\"tooltip3\" placement=\"left\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip id=\"tooltip4\" placement=\"bottom\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t\t\t</div>\n\t\t)\n\t}\n}","desc":" `placement`参数控制显示位置。"},{"example":<Demo2 />,"title":" 动态触发Tooltip","code":"/**\n * @title 动态触发Tooltip\n * @description OverlayTrigger组件详见bee-overlay库\n */\n const tooltip1 = function () {\n\treturn (\n\t  <Tooltip id=\"tooltip5\" positionTop=\"20px\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t);\n}\nclass Demo2 extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<OverlayTrigger overlay = {tooltip1()}  placement=\"top\">\n\t\t    \t<Button colors=\"primary\">tooltip</Button>\n\t\t    </OverlayTrigger>\n\t\t)\n\t}\n}","desc":" OverlayTrigger组件详见bee-overlay库"}]
+var Demo1 = require("./demolist/Demo1");var Demo2 = require("./demolist/Demo2");var DemoArray = [{"example":<Demo1 />,"title":" 静态Tooltip","code":"/**\n * @title 静态Tooltip\n * @description `placement`参数控制显示位置。\n */\n\n\nimport React, { Component } from 'react';\nimport Tooltip from 'tinper-bee';\n\n\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-tooltip\">\n\t\t\t\t<Tooltip inverse id=\"tooltip1\"><strong>Holy !</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip inverse id=\"tooltip2\" placement=\"top\"><strong> guacamole!</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip id=\"tooltip3\" placement=\"left\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t\t\t\t<Tooltip id=\"tooltip4\" placement=\"bottom\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n","desc":" `placement`参数控制显示位置。"},{"example":<Demo2 />,"title":" 动态触发Tooltip","code":"/**\n * @title 动态触发Tooltip\n * @description OverlayTrigger组件详见bee-overlay库\n */\n\nimport Button from 'bee-button';\nimport React, { Component } from 'react';\nimport Tooltip from 'tinper-bee';\nimport OverlayTrigger from 'bee-overlay/build/OverlayTrigger';\n\n\nconst tooltip1 = function () {\n\treturn (\n\t  <Tooltip id=\"tooltip5\" positionTop=\"20px\"><strong>Holy guacamole!</strong> Check this info.</Tooltip>\n\t);\n}\nclass Demo2 extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<OverlayTrigger overlay = {tooltip1()}  placement=\"top\">\n\t\t    \t<Button colors=\"primary\">tooltip</Button>\n\t\t    </OverlayTrigger>\n\t\t)\n\t}\n}\n\n\n","desc":" OverlayTrigger组件详见bee-overlay库"}]
 
 
 class Demo extends Component {
