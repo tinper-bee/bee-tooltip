@@ -24,7 +24,7 @@ npm install --save bee-tooltip
 ```
 组件调用
 ```js
-import { Tooltip } from 'bee-tooltip';
+import Tooltip from 'bee-tooltip';
 React.render(<div>
     <div>
         <Tooltip placement="top" className="in">show tooltip</Tooltip>
@@ -52,6 +52,6 @@ import "./node_modules/build/bee-tooltip.css"
 ## API
 |参数|说明|类型|默认值|
 |---|----|---|------|
-|palcement|显示位置(`top` `left` `right` `bottom`)|string|top|
+|placement|显示位置(`top` `left` `right` `bottom`)|string|top|
 |inverse|反白显示|bool|false|
 |className|增加额外的class(in,'')|string|''默认隐藏
