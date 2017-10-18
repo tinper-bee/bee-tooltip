@@ -1,6 +1,6 @@
 import classnames from 'classnames';
-import React,{PropTypes} from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const propTypes = {
   /**
@@ -9,7 +9,7 @@ const propTypes = {
   id: PropTypes.oneOfType([
     PropTypes.string, PropTypes.number,
   ]),
-  inverse: React.PropTypes.bool,
+  inverse: PropTypes.bool,
   /**
    * 相对目标元素显示上下左右的位置
    */

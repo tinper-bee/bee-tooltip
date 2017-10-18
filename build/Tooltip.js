@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -32,30 +36,30 @@ var propTypes = {
   /**
    * @required
    */
-  id: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]),
-  inverse: _react2["default"].PropTypes.bool,
+  id: _propTypes2["default"].oneOfType([_propTypes2["default"].string, _propTypes2["default"].number]),
+  inverse: _propTypes2["default"].bool,
   /**
    * 相对目标元素显示上下左右的位置
    */
-  placement: _react.PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  placement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left']),
 
   /**
    * 绝对定位上边距.
    */
-  positionTop: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
+  positionTop: _propTypes2["default"].oneOfType([_propTypes2["default"].number, _propTypes2["default"].string]),
   /**
    * 绝对定位左边距
    */
-  positionLeft: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
+  positionLeft: _propTypes2["default"].oneOfType([_propTypes2["default"].number, _propTypes2["default"].string]),
 
   /**
    * 与目标Top的距离
    */
-  arrowOffsetTop: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string]),
+  arrowOffsetTop: _propTypes2["default"].oneOfType([_propTypes2["default"].number, _propTypes2["default"].string]),
   /**
    * 与目标Left的距离
    */
-  arrowOffsetLeft: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string])
+  arrowOffsetLeft: _propTypes2["default"].oneOfType([_propTypes2["default"].number, _propTypes2["default"].string])
 };
 
 var defaultProps = {
