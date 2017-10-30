@@ -1,28 +1,35 @@
 /**
- * @title 动态触发Tooltip
- * @description OverlayTrigger组件详见bee-overlay库
+ * @title 基本Tooltip
+ * @description `placement`参数控制显示位置，`trigger`设置显示方式。
  */
 
-import Button from 'bee-button';
+
 import React, { Component } from 'react';
 import Tooltip from '../../src';
-import OverlayTrigger from 'bee-overlay/build/OverlayTrigger';
+import Button from 'bee-button';
 
 
-const tooltip1 = function () {
-	return (
-	  <Tooltip id="tooltip5" positionTop="20px"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
-	);
-}
 class Demo2 extends Component {
-	render(){
-		return (
-			<OverlayTrigger overlay = {tooltip1()}  placement="top">
-		    	<Button colors="primary">tooltip</Button>
-		    </OverlayTrigger>
-		)
-	}
-}
+    handle = () => {
+        //debugger;
+    }
+    render () {
+        let tip = (
+            <div>
+                这是一个很强的提醒！
+            </div>
+        )
 
+        return (
+            <div className="demo-tooltip">
+                <Tooltip delay={2000} inverse overlay={tip}>
+                    <Button colors="primary">
+                        延时显示
+                    </Button>
+                </Tooltip>
+            </div>
+        )
+    }
+}
 
 export default Demo2;

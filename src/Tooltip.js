@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
+import OverlayTrigger from 'bee-overlay/build/OverlayTrigger';
 
 const propTypes = {
   /**
@@ -60,6 +61,7 @@ class Tooltip extends React.Component {
       style,
       children,
       clsPrefix,
+        overlay,
       inverse,
       ...others
     } = this.props;
@@ -82,18 +84,25 @@ class Tooltip extends React.Component {
     };
 
     let classNames = classnames(clsPrefix,classes);
-    return (
-      <div
-        {...others}
-        className={classnames(className, classNames)}
-        style={outerStyle}
-      >
-        <div className='tooltip-arrow' style={arrowStyle} />
 
-        <div className='tooltip-inner'>
-          {children}
+    let overlayNode = (
+        <div
+            className={classnames(className, classNames)}
+            style={outerStyle}
+        >
+          <div className='tooltip-arrow' style={arrowStyle} />
+
+          <div className='tooltip-inner'>
+              {overlay}
+          </div>
         </div>
-      </div>
+    );
+
+    return (
+        <OverlayTrigger placement={placement} {...others} overlay={overlayNode}>
+            { children }
+        </OverlayTrigger>
+
     );
   }
 }

@@ -1,21 +1,35 @@
 /**
- * @title 静态Tooltip
- * @description `placement`参数控制显示位置。
+ * @title 基本Tooltip
+ * @description `placement`参数控制显示位置，`trigger`设置显示方式。
  */
 
 
 import React, { Component } from 'react';
 import Tooltip from '../../src';
+import Button from 'bee-button';
 
 
 class Demo1 extends Component {
+
 	render () {
+		let tip = (
+			<div>
+				这是一个很强的提醒！
+			</div>
+		)
+
 		return (
 			<div className="demo-tooltip">
-				<Tooltip inverse id="tooltip1"><strong>Holy !</strong> Check this info.</Tooltip>
-				<Tooltip inverse id="tooltip2" placement="top"><strong> guacamole!</strong> Check this info.</Tooltip>
-				<Tooltip id="tooltip3" placement="left"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
-				<Tooltip id="tooltip4" placement="bottom"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
+				<Tooltip inverse overlay={tip}>
+					<Button colors="primary">
+						请拂过我的脸庞
+					</Button>
+				</Tooltip>
+				<Tooltip trigger="click" rootClose placement="bottom" overlay={tip}>
+					<Button style={{ marginLeft: 100 }} colors="primary">
+						请拂过我的脸庞
+					</Button>
+				</Tooltip>
 			</div>
 		)
 	}
