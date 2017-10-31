@@ -11,7 +11,6 @@
   line-break: auto;
   line-height: 1.42857143;
   text-align: left;
-  text-align: start;
   text-decoration: none;
   text-shadow: none;
   text-transform: none;
@@ -24,9 +23,6 @@
   .u-tooltip.in {
     opacity: 0.9 !important; }
   .u-tooltip .tooltip-arrow {
-    /*position: absolute;
-	    border-color: transparent;
-	    border-style: solid;*/
     position: absolute;
     display: block;
     width: 0;
@@ -110,7 +106,5 @@
     display: block;
     width: 0;
     height: 0;
-    border-color: transparent;
-    border-style: solid;
-    content: " ";
-    border-width: 5px; }
+    border: 5px solid transparent;
+    content: " "; }

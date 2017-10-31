@@ -1,6 +1,6 @@
 /**
- * @title 基本Tooltip
- * @description `placement`参数控制显示位置，`trigger`设置显示方式。
+ * @title 延时显示Tooltip
+ * @description `delay`参数设置延时显示和隐藏
  */
 
 
@@ -10,9 +10,6 @@ import Button from 'bee-button';
 
 
 class Demo2 extends Component {
-    handle = () => {
-        //debugger;
-    }
     render () {
         let tip = (
             <div>

@@ -27,7 +27,7 @@ class Demo1 extends Component {
 				</Tooltip>
 				<Tooltip trigger="click" rootClose placement="bottom" overlay={tip}>
 					<Button style={{ marginLeft: 100 }} colors="primary">
-						请拂过我的脸庞
+						轻轻触碰我的指尖
 					</Button>
 				</Tooltip>
 			</div>

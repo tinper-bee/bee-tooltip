@@ -37,19 +37,21 @@ React.render(
 #### 样式引入
 - 可以使用link引入dist目录下tooltip.css
 ```
-<link rel="stylesheet" href="./node_modules/build/bee-tooltip.css">
+<link rel="stylesheet" href="./node_modules/build/Tooltip.css">
 ```
 - 可以在js中import样式
 ```js
-import "./node_modules/src/tooltip.scss"
+import "./node_modules/src/Tooltip.scss"
 //或是
-import "./node_modules/build/bee-tooltip.css"
+import "./node_modules/build/Tooltip.css"
 ```
 
 ### 使用tinper-bee组件库
 (tinper-bee组件库使用方法)[]
 
-
+```
+import { Tooltip } from 'tinper-bee';
+```
 
 
 ## API
