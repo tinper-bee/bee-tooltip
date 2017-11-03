@@ -5,7 +5,7 @@
 
 react bee-tooltip component for tinper-bee.
 
- > cz test 1
+ > cz test 0
 
 #### setup develop environment 
 
