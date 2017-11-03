@@ -7,7 +7,6 @@ react bee-tooltip component for tinper-bee
 
 #### setup develop environment
 
-
 ```sh
 $ git clone https://github.com/tinper-bee/bee-tooltip
 $ cd bee-tooltip
