@@ -33,7 +33,8 @@
   "chrome": "bee-tools run chrome",
   "browsers": "bee-tools run browsers",
   "pub": "bee-tools run pub",
-  "coveralls": "bee-tools run coverage"
+  "coveralls": "bee-tools run coverage",
+  "change_log": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
  },
  "dependencies": {
   "babel-runtime": "^6.20.0",
