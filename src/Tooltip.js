@@ -99,7 +99,7 @@ class Tooltip extends React.Component {
         );
 
         return (
-            <OverlayTrigger placement={placement} {...others} overlay={overlayNode}>
+            <OverlayTrigger shouldUpdatePosition placement={placement} {...others} overlay={overlayNode}>
                 { children }
             </OverlayTrigger>
 

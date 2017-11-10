@@ -127,7 +127,7 @@ var Tooltip = function (_React$Component) {
 
         return _react2["default"].createElement(
             _OverlayTrigger2["default"],
-            _extends({ placement: placement }, others, { overlay: overlayNode }),
+            _extends({ shouldUpdatePosition: true, placement: placement }, others, { overlay: overlayNode }),
             children
         );
     };
