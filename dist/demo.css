@@ -6268,21 +6268,4 @@ input.u-button[type="submit"] {
 .u-button-pill-right {
   border-radius: 0 500px 500px 0; }
 
-.margin-left-50 {
-  margin-left: 50px; }
-
-#tinperBeeDemo .u-tooltip {
-  position: relative;
-  display: inline-block; }
-
-.demo-tooltip .u-tooltip {
-  position: relative;
-  opacity: 1;
-  margin-right: 20px;
-  margin-top: 20px;
-  display: inline-block; }
-
-.demo-overlay-trigger .u-button {
-  margin-right: 50px; }
-
 /*# sourceMappingURL=demo.css.map */
