@@ -1,5 +1,15 @@
+<a name="1.0.8"></a>
+## [1.0.8](https://github.com/tinper-bee/bee-tooltip/compare/v1.0.7...v1.0.8) (2018-08-31)
+
+
+### Features
+
+* **bee-tooltip:** overlay加判断，没有内容不渲染arrow和inner ([b817dc8](https://github.com/tinper-bee/bee-tooltip/commit/b817dc8))
+
+
+
 <a name="1.0.7"></a>
-## 1.0.7 (2018-08-12)
+## [1.0.7](https://github.com/tinper-bee/bee-tooltip/compare/317b489...v1.0.7) (2018-08-12)
 
 
 ### Bug Fixes
