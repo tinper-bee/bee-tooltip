@@ -117,12 +117,12 @@ var Tooltip = function (_React$Component) {
                 className: (0, _classnames2["default"])(className, classNames),
                 style: outerStyle
             },
-            _react2["default"].createElement('div', { className: 'tooltip-arrow', style: arrowStyle }),
-            _react2["default"].createElement(
+            overlay ? _react2["default"].createElement('div', { className: 'tooltip-arrow', style: arrowStyle }) : '',
+            overlay ? _react2["default"].createElement(
                 'div',
                 { className: 'tooltip-inner' },
                 overlay
-            )
+            ) : ''
         );
 
         return _react2["default"].createElement(

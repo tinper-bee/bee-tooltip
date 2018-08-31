@@ -90,11 +90,18 @@ class Tooltip extends React.Component {
                 className={classnames(className, classNames)}
                 style={outerStyle}
             >
-                <div className='tooltip-arrow' style={arrowStyle}/>
-
-                <div className='tooltip-inner'>
-                    {overlay}
-                </div>
+            {
+                overlay?(
+                    <div className='tooltip-arrow' style={arrowStyle}/>
+                ):''
+            }
+            {
+                overlay?(
+                    <div className='tooltip-inner'>
+                        {overlay}
+                    </div>
+                ):''
+            }
             </div>
         );
 
