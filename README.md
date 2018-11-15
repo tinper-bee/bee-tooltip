@@ -77,3 +77,5 @@ import { Tooltip } from 'tinper-bee';
 |onMouseOver|鼠标滑过事件|function|-|
 |placement|显示位置设置|top\left\bottom\right|right|
 |rootClose|是否点击除弹出层任意地方隐藏|boolean|true|
+|visible|是否控制弹出层的显示|boolean|-|
+|onVisibleChange|使用控制弹出层显示时的钩子函数|function|-|

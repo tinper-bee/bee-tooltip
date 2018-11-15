@@ -42,6 +42,8 @@ var propTypes = {
      */
     id: _propTypes2["default"].oneOfType([_propTypes2["default"].string, _propTypes2["default"].number]),
     inverse: _propTypes2["default"].bool,
+    visible: _propTypes2["default"].bool,
+    onVisibleChange: _propTypes2["default"].func,
     /**
      * 相对目标元素显示上下左右的位置
      */
@@ -70,32 +72,78 @@ var defaultProps = {
     placement: 'right',
     clsPrefix: 'u-tooltip'
 };
+function OverlayNode(props) {
+    var className = props.className,
+        classNames = props.classNames,
+        style = props.style,
+        overlay = props.overlay,
+        arrowOffsetTop = props.arrowOffsetTop,
+        arrowOffsetLeft = props.arrowOffsetLeft;
+
+    return _react2["default"].createElement(
+        'div',
+        {
+            className: (0, _classnames2["default"])(className, classNames),
+            style: style
+        },
+        overlay ? _react2["default"].createElement('div', { className: 'tooltip-arrow', style: {
+                top: arrowOffsetTop,
+                left: arrowOffsetLeft
+            } }) : '',
+        overlay ? _react2["default"].createElement(
+            'div',
+            { className: 'tooltip-inner' },
+            overlay
+        ) : ''
+    );
+}
 
 var Tooltip = function (_React$Component) {
     _inherits(Tooltip, _React$Component);
 
-    function Tooltip() {
+    function Tooltip(props) {
         _classCallCheck(this, Tooltip);
 
-        return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+
+        if ('visible' in props) {
+            _this.state = {
+                visible: props.visible
+            };
+        }
+        return _this;
     }
 
-    Tooltip.prototype.render = function render() {
-        var _classes;
-
+    Tooltip.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
         var _props = this.props,
-            placement = _props.placement,
-            positionTop = _props.positionTop,
-            positionLeft = _props.positionLeft,
-            arrowOffsetTop = _props.arrowOffsetTop,
-            arrowOffsetLeft = _props.arrowOffsetLeft,
-            className = _props.className,
-            style = _props.style,
-            children = _props.children,
-            clsPrefix = _props.clsPrefix,
-            overlay = _props.overlay,
-            inverse = _props.inverse,
-            others = _objectWithoutProperties(_props, ['placement', 'positionTop', 'positionLeft', 'arrowOffsetTop', 'arrowOffsetLeft', 'className', 'style', 'children', 'clsPrefix', 'overlay', 'inverse']);
+            visible = _props.visible,
+            onVisibleChange = _props.onVisibleChange;
+
+        if ('visible' in this.props && prevProps.visible !== visible) {
+            this.setState({
+                visible: visible
+            });
+            onVisibleChange && onVisibleChange(visible);
+        }
+    };
+
+    Tooltip.prototype.render = function render() {
+        var _classes,
+            _this2 = this;
+
+        var _props2 = this.props,
+            placement = _props2.placement,
+            positionTop = _props2.positionTop,
+            positionLeft = _props2.positionLeft,
+            arrowOffsetTop = _props2.arrowOffsetTop,
+            arrowOffsetLeft = _props2.arrowOffsetLeft,
+            className = _props2.className,
+            style = _props2.style,
+            children = _props2.children,
+            clsPrefix = _props2.clsPrefix,
+            overlay = _props2.overlay,
+            inverse = _props2.inverse,
+            others = _objectWithoutProperties(_props2, ['placement', 'positionTop', 'positionLeft', 'arrowOffsetTop', 'arrowOffsetLeft', 'className', 'style', 'children', 'clsPrefix', 'overlay', 'inverse']);
 
         var classes = (_classes = {}, _defineProperty(_classes, placement, true), _defineProperty(_classes, 'inverse', inverse), _classes);
 
@@ -111,23 +159,25 @@ var Tooltip = function (_React$Component) {
 
         var classNames = (0, _classnames2["default"])(clsPrefix, classes);
 
-        var overlayNode = _react2["default"].createElement(
-            'div',
-            {
-                className: (0, _classnames2["default"])(className, classNames),
-                style: outerStyle
-            },
-            overlay ? _react2["default"].createElement('div', { className: 'tooltip-arrow', style: arrowStyle }) : '',
-            overlay ? _react2["default"].createElement(
-                'div',
-                { className: 'tooltip-inner' },
-                overlay
-            ) : ''
-        );
-
-        return _react2["default"].createElement(
+        var overlayNode = _react2["default"].createElement(OverlayNode, {
+            className: className,
+            classNames: classNames,
+            overlay: overlay,
+            style: true,
+            arrowOffsetTop: true,
+            arrowOffsetLeft: true
+        });
+        return 'visible' in this.props ? _react2["default"].createElement(
             _OverlayTrigger2["default"],
-            _extends({ shouldUpdatePosition: true, placement: placement }, others, { overlay: overlayNode }),
+            _extends({ visible: this.state.visible, ref: function ref(_ref) {
+                    return _this2.trigger = _ref;
+                }, shouldUpdatePosition: true, placement: placement }, others, { overlay: overlayNode }),
+            children
+        ) : _react2["default"].createElement(
+            _OverlayTrigger2["default"],
+            _extends({ ref: function ref(_ref2) {
+                    return _this2.trigger = _ref2;
+                }, shouldUpdatePosition: true, placement: placement }, others, { overlay: overlayNode }),
             children
         );
     };

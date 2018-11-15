@@ -11,6 +11,8 @@ const propTypes = {
         PropTypes.string, PropTypes.number,
     ]),
     inverse: PropTypes.bool,
+    visible: PropTypes.bool,
+    onVisibleChange: PropTypes.func,
     /**
      * 相对目标元素显示上下左右的位置
      */
@@ -47,9 +49,54 @@ const defaultProps = {
     placement: 'right',
     clsPrefix: 'u-tooltip'
 };
+function OverlayNode(props){
+    let { className, classNames, style, overlay, arrowOffsetTop, arrowOffsetLeft } = props;
+    return (
+        <div
+            className={classnames(className, classNames)}
+            style={style}
+        >
+        {
+            overlay?(
+                <div className='tooltip-arrow' style={{
+                    top: arrowOffsetTop,
+                    left: arrowOffsetLeft
+                }}/>
+            ):''
+        }
+        {
+            overlay?(
+                <div className='tooltip-inner'>
+                    {overlay}
+                </div>
+            ):''
+        }
+        </div>
+    )
+}
 
 
 class Tooltip extends React.Component {
+    constructor(props){
+        super(props);
+        if ('visible' in props) {
+            this.state = {
+                visible: props.visible
+            }
+        }
+    }
+    
+
+    componentDidUpdate(prevProps) {
+        let { visible, onVisibleChange } = this.props;
+        if ('visible' in this.props && prevProps.visible !== visible) {
+            this.setState({
+                visible: visible
+            })
+            onVisibleChange && onVisibleChange(visible)
+        }
+    }
+
     render() {
         const {
             placement,
@@ -85,32 +132,24 @@ class Tooltip extends React.Component {
 
         let classNames = classnames(clsPrefix, classes);
 
-        let overlayNode = (
-            <div
-                className={classnames(className, classNames)}
-                style={outerStyle}
-            >
-            {
-                overlay?(
-                    <div className='tooltip-arrow' style={arrowStyle}/>
-                ):''
-            }
-            {
-                overlay?(
-                    <div className='tooltip-inner'>
-                        {overlay}
-                    </div>
-                ):''
-            }
-            </div>
-        );
-
-        return (
-            <OverlayTrigger shouldUpdatePosition placement={placement} {...others} overlay={overlayNode}>
+        let overlayNode = <OverlayNode
+            className={className}
+            classNames={classNames}
+            overlay={overlay}
+            style
+            arrowOffsetTop
+            arrowOffsetLeft
+            />
+        return 'visible' in this.props ? (
+            <OverlayTrigger visible={this.state.visible} ref={ref => this.trigger = ref} shouldUpdatePosition placement={placement} {...others} overlay={overlayNode}>
                 { children }
             </OverlayTrigger>
 
-        );
+        ) : (
+            <OverlayTrigger ref={ref => this.trigger = ref} shouldUpdatePosition placement={placement} {...others} overlay={overlayNode}>
+                { children }
+            </OverlayTrigger>
+        )
     }
 }
 
