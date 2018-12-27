@@ -54,6 +54,8 @@ function OverlayNode(props){
     return (
         <div
             className={classnames(className, classNames)}
+            onMouseEnter={props.onMouseEnter}
+            onMouseLeave={props.onMouseLeave}
             style={style}
         >
         {
@@ -79,11 +81,15 @@ function OverlayNode(props){
 class Tooltip extends React.Component {
     constructor(props){
         super(props);
-        if ('visible' in props) {
-            this.state = {
-                visible: props.visible
-            }
+        let initState = {
+            isHoverShow: false
         }
+        if ('visible' in props) {
+            Object.assign(initState, {
+                visible: props.visible
+            })
+        }
+        this.state = initState;
     }
     
 
@@ -95,6 +101,24 @@ class Tooltip extends React.Component {
             })
             onVisibleChange && onVisibleChange(visible)
         }
+    }
+
+    /**
+     * @desc 鼠标划入时候的事件
+     */
+    onMouseEnter = () => {
+        this.setState({
+            isHoverShow: true
+        })
+    }
+
+    /**
+     * @desc 鼠标划出时候的事件
+     */
+    onMouseLeave = () => {
+        this.setState({
+            isHoverShow: false
+        })
     }
 
     render() {
@@ -136,6 +160,8 @@ class Tooltip extends React.Component {
             className={className}
             classNames={classNames}
             overlay={overlay}
+            onMouseEnter={this.onMouseEnter}
+            onMouseLeave={this.onMouseLeave}
             style
             arrowOffsetTop
             arrowOffsetLeft
@@ -146,7 +172,7 @@ class Tooltip extends React.Component {
             </OverlayTrigger>
 
         ) : (
-            <OverlayTrigger ref={ref => this.trigger = ref} shouldUpdatePosition placement={placement} {...others} overlay={overlayNode}>
+            <OverlayTrigger isHoverShow={this.state.isHoverShow} ref={ref => this.trigger = ref} shouldUpdatePosition placement={placement} {...others} overlay={overlayNode}>
                 { children }
             </OverlayTrigger>
         )

@@ -84,6 +84,8 @@ function OverlayNode(props) {
         'div',
         {
             className: (0, _classnames2["default"])(className, classNames),
+            onMouseEnter: props.onMouseEnter,
+            onMouseLeave: props.onMouseLeave,
             style: style
         },
         overlay ? _react2["default"].createElement('div', { className: 'tooltip-arrow', style: {
@@ -106,11 +108,27 @@ var Tooltip = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
+        _this.onMouseEnter = function () {
+            _this.setState({
+                isHoverShow: true
+            });
+        };
+
+        _this.onMouseLeave = function () {
+            _this.setState({
+                isHoverShow: false
+            });
+        };
+
+        var initState = {
+            isHoverShow: false
+        };
         if ('visible' in props) {
-            _this.state = {
+            _extends(initState, {
                 visible: props.visible
-            };
+            });
         }
+        _this.state = initState;
         return _this;
     }
 
@@ -126,6 +144,16 @@ var Tooltip = function (_React$Component) {
             onVisibleChange && onVisibleChange(visible);
         }
     };
+
+    /**
+     * @desc 鼠标划入时候的事件
+     */
+
+
+    /**
+     * @desc 鼠标划出时候的事件
+     */
+
 
     Tooltip.prototype.render = function render() {
         var _classes,
@@ -163,6 +191,8 @@ var Tooltip = function (_React$Component) {
             className: className,
             classNames: classNames,
             overlay: overlay,
+            onMouseEnter: this.onMouseEnter,
+            onMouseLeave: this.onMouseLeave,
             style: true,
             arrowOffsetTop: true,
             arrowOffsetLeft: true
@@ -175,7 +205,7 @@ var Tooltip = function (_React$Component) {
             children
         ) : _react2["default"].createElement(
             _OverlayTrigger2["default"],
-            _extends({ ref: function ref(_ref2) {
+            _extends({ isHoverShow: this.state.isHoverShow, ref: function ref(_ref2) {
                     return _this2.trigger = _ref2;
                 }, shouldUpdatePosition: true, placement: placement }, others, { overlay: overlayNode }),
             children
