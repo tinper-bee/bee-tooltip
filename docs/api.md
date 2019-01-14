@@ -26,6 +26,7 @@
 |rootClose|是否点击除弹出层任意地方隐藏|boolean|true|
 |visible|是否控制弹出层的显示|boolean|-|
 |onVisibleChange|使用控制弹出层显示时的钩子函数|function|-|
+|container|容器|DOM元素/React组件/或者返回React组件的函数|-|
 
 
 

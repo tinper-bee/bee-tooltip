@@ -20,7 +20,7 @@ class Demo1 extends Component {
 
 		return (
 			<div className="demo-tooltip">
-				<Tooltip defaultOverlayShown inverse overlay={tip}>
+				<Tooltip inverse overlay={tip}>
 					<Button colors="primary">
 						请拂过我的脸庞
 					</Button>
