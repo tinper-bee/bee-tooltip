@@ -1,6 +1,6 @@
 /**
  * @title 延时显示Tooltip
- * @description `delay`参数设置延时显示和隐藏
+ * @description `delay`参数设置延时显示和隐藏，以下示例为 鼠标悬停两秒后显示
  */
 
 

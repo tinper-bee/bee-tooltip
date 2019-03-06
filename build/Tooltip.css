@@ -33,7 +33,7 @@
     max-width: 200px;
     padding: 3px 8px;
     color: #fff;
-    background-color: #000;
+    background-color: #42526E;
     border-radius: 3px;
     word-wrap: break-word; }
   .u-tooltip.right {
@@ -43,7 +43,7 @@
       left: 0;
       margin-top: -5px;
       border-width: 5px 5px 5px 0;
-      border-right-color: #000; }
+      border-right-color: #42526E; }
   .u-tooltip.top {
     padding: 5px 0; }
     .u-tooltip.top .tooltip-arrow {
@@ -51,7 +51,7 @@
       left: 50%;
       margin-left: -5px;
       border-width: 5px 5px 0;
-      border-top-color: #000; }
+      border-top-color: #42526E; }
   .u-tooltip.left {
     padding: 0 5px; }
     .u-tooltip.left .tooltip-arrow {
@@ -59,7 +59,7 @@
       right: 0;
       margin-top: -5px;
       border-width: 5px 0 5px 5px;
-      border-left-color: #000; }
+      border-left-color: #42526E; }
   .u-tooltip.bottom {
     padding: 5px 0; }
     .u-tooltip.bottom .tooltip-arrow {
@@ -67,33 +67,33 @@
       left: 50%;
       margin-left: -5px;
       border-width: 0 5px 5px;
-      border-bottom-color: #000; }
+      border-bottom-color: #42526E; }
   .u-tooltip.inverse-arrow.right .tooltip-arrow {
     top: 50%;
     left: auto;
     right: 0;
     margin-top: -5px;
     border-width: 5px 0 5px 5px;
-    border-left-color: #000; }
+    border-left-color: #42526E; }
   .u-tooltip.inverse-arrow.left .tooltip-arrow {
     top: 50%;
     left: 0;
     margin-top: -5px;
     border-width: 5px 5px 5px 0;
-    border-right-color: #000; }
+    border-right-color: #42526E; }
   .u-tooltip.inverse-arrow.top .tooltip-arrow {
     top: 0;
     left: 50%;
     margin-left: -5px;
     border-width: 0 5px 5px;
-    border-bottom-color: #000; }
+    border-bottom-color: #42526E; }
   .u-tooltip.inverse-arrow.bottom .tooltip-arrow {
     top: auto;
     bottom: 0;
     left: 50%;
     margin-left: -5px;
     border-width: 5px 5px 0;
-    border-top-color: #000; }
+    border-top-color: #42526E; }
   .u-tooltip.inverse.bottom .tooltip-arrow::after {
     top: 1px;
     margin-left: -5px;

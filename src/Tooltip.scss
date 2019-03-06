@@ -1,7 +1,8 @@
 @import "../node_modules/tinper-bee-core/scss/minxin-variables";
 @import "../node_modules/tinper-bee-core/scss/minxin-mixins";
 
-
+$tooltip-bg: #42526E;
+$tooltip-arrow-color: #42526E;
 .u-tooltip{
     position: absolute;
     z-index: 1070;
@@ -38,7 +39,7 @@
     	max-width: $tooltip-max-width;
 	    padding: 3px 8px;
 	    color: #fff;
-	    background-color: $tooltip-bg;
+	    background-color: #42526E;
         border-radius: $border-radius;
         word-wrap:break-word;
     }
