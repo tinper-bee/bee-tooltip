@@ -5580,6 +5580,16 @@
 	  var documentWidth = documentElement.scrollWidth;
 	  var documentHeight = documentElement.scrollHeight;
 	
+	  // scrollXXX on html is sync with body which means overflow: hidden on body gets wrong scrollXXX.
+	  // We should cut this ourself.
+	  var bodyStyle = window.getComputedStyle(body);
+	  if (bodyStyle.overflowX === 'hidden') {
+	    documentWidth = win.innerWidth;
+	  }
+	  if (bodyStyle.overflowY === 'hidden') {
+	    documentHeight = win.innerHeight;
+	  }
+	
 	  // Reset element position after calculate the visible area
 	  if (element.style) {
 	    element.style.position = originalPosition;
@@ -7962,7 +7972,9 @@
 	        if (colorsMap[colors]) {
 	            clsObj[clsPrefix + '-' + colorsMap[colors]] = true;
 	        }
-	        //clsObj[`${clsPrefix}-border`] = bordered;
+	        if (bordered) {
+	            clsObj[clsPrefix + '-border'] = bordered;
+	        }
 	        var classes = (0, _classnames2["default"])(clsPrefix, clsObj);
 	        return _react2["default"].createElement(
 	            'button',
@@ -16044,7 +16056,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.SelectPropTypes = exports.OptGroup = exports.Option = undefined;
 	
 	var _Select = __webpack_require__(143);
 	
@@ -16064,10 +16075,8 @@
 	
 	_Select2["default"].Option = _Option2["default"];
 	_Select2["default"].OptGroup = _OptGroup2["default"];
-	exports.Option = _Option2["default"];
-	exports.OptGroup = _OptGroup2["default"];
-	exports.SelectPropTypes = _PropTypes.SelectPropTypes;
 	exports["default"] = _Select2["default"];
+	module.exports = exports['default'];
 
 /***/ }),
 /* 143 */
@@ -20251,7 +20260,7 @@
 /* 237 */
 /***/ (function(module, exports) {
 
-	/** @license React v16.8.3
+	/** @license React v16.8.4
 	 * react-is.production.min.js
 	 *
 	 * Copyright (c) Facebook, Inc. and its affiliates.
@@ -20272,7 +20281,7 @@
 /* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {/** @license React v16.8.3
+	/* WEBPACK VAR INJECTION */(function(process) {/** @license React v16.8.4
 	 * react-is.development.js
 	 *
 	 * Copyright (c) Facebook, Inc. and its affiliates.
