@@ -1,3 +1,8 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/tinper-bee/bee-tooltip/compare/v2.1.0...v2.1.1) (2019-06-06)
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/tinper-bee/bee-tooltip/compare/v2.0.4...v2.1.0) (2019-06-06)
 
