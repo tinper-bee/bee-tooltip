@@ -77,18 +77,19 @@ function OverlayNode(props) {
         className = props.className,
         classNames = props.classNames,
         style = props.style,
-        overlay = props.overlay;
+        overlay = props.overlay,
+        otherProps = props.otherProps;
 
     return _react2["default"].createElement(
         'div',
-        {
+        _extends({
             id: id,
             role: 'tooltip',
             className: (0, _classnames2["default"])(className, classNames),
             onMouseEnter: props.onMouseEnter,
             onMouseLeave: props.onMouseLeave,
             style: style
-        },
+        }, otherProps),
         overlay ? _react2["default"].createElement('div', { className: 'tooltip-arrow' }) : '',
         overlay ? _react2["default"].createElement(
             'div',
@@ -180,7 +181,8 @@ var Tooltip = function (_React$Component) {
             clsPrefix = _props2.clsPrefix,
             overlay = _props2.overlay,
             inverse = _props2.inverse,
-            others = _objectWithoutProperties(_props2, ['placement', 'id', 'arrowOffsetTop', 'arrowOffsetLeft', 'className', 'style', 'children', 'clsPrefix', 'overlay', 'inverse']);
+            trigger = _props2.trigger,
+            others = _objectWithoutProperties(_props2, ['placement', 'id', 'arrowOffsetTop', 'arrowOffsetLeft', 'className', 'style', 'children', 'clsPrefix', 'overlay', 'inverse', 'trigger']);
 
         var classes = (_classes = {}, _defineProperty(_classes, placement, true), _defineProperty(_classes, 'inverse', inverse), _classes);
 
@@ -200,7 +202,8 @@ var Tooltip = function (_React$Component) {
             onMouseLeave: this.onMouseLeave,
             style: style,
             arrowOffsetTop: arrowOffsetTop,
-            arrowOffsetLeft: arrowOffsetLeft
+            arrowOffsetLeft: arrowOffsetLeft,
+            otherProps: others
         });
         return 'visible' in this.props ? _react2["default"].createElement(
             _OverlayTrigger2["default"],

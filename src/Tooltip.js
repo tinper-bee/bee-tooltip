@@ -50,7 +50,7 @@ const defaultProps = {
     clsPrefix: 'u-tooltip'
 };
 function OverlayNode(props){
-    let { id, className, classNames, style, overlay } = props;
+    let { id, className, classNames, style, overlay, otherProps } = props;
     return (
         <div
             id={id}
@@ -59,6 +59,7 @@ function OverlayNode(props){
             onMouseEnter={props.onMouseEnter}
             onMouseLeave={props.onMouseLeave}
             style={style}
+            {...otherProps}
         >
         {
             overlay?(
@@ -141,6 +142,7 @@ class Tooltip extends React.Component {
             clsPrefix,
             overlay,
             inverse,
+            trigger,
             ...others
         } = this.props;
 
@@ -167,6 +169,7 @@ class Tooltip extends React.Component {
             style={style}
             arrowOffsetTop={arrowOffsetTop}
             arrowOffsetLeft={arrowOffsetLeft}
+            otherProps={others}
             />
         return 'visible' in this.props ? (
             <OverlayTrigger 
