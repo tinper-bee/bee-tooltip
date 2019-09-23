@@ -143,6 +143,13 @@ class Tooltip extends React.Component {
             overlay,
             inverse,
             trigger,
+            onVisibleChange,
+            onHide,
+            rootClose,
+            visible,
+            defaultOverlayShown,
+            positionTop,
+            positionLeft,
             ...others
         } = this.props;
 
@@ -173,26 +180,36 @@ class Tooltip extends React.Component {
             />
         return 'visible' in this.props ? (
             <OverlayTrigger 
+            {...others} 
             visible={this.state.visible} 
             ref={ref => this.trigger = ref} 
             shouldUpdatePosition 
             placement={placement} 
-            {...others} 
             overlay={overlayNode}
             onHide={this.handleOnHide}
+            rootClose={rootClose}
+            defaultOverlayShown={defaultOverlayShown}
+            positionTop={positionTop}
+            positionLeft={positionLeft}
+            trigger={trigger}
             >
                 { children }
             </OverlayTrigger>
 
         ) : (
             <OverlayTrigger 
+            {...others} 
             isHoverShow={this.state.isHoverShow} 
             ref={ref => this.trigger = ref} 
             shouldUpdatePosition 
             placement={placement} 
-            {...others} 
             overlay={overlayNode}
             onHide={this.handleOnHide}
+            rootClose={rootClose}
+            defaultOverlayShown={defaultOverlayShown}
+            positionTop={positionTop}
+            positionLeft={positionLeft}
+            trigger={trigger}
             >
                 { children }
             </OverlayTrigger>
